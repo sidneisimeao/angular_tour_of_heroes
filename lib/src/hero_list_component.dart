@@ -8,8 +8,7 @@ import 'hero_service.dart';
   selector: 'my-heroes',
   templateUrl: 'hero_list_component.html',
   styleUrls: ['hero_list_component.css'],
-  directives: [coreDirectives, HeroComponent],
-  providers: [ClassProvider(HeroService)],
+  directives: [coreDirectives, HeroComponent],  
 )
 class HeroListComponent implements OnInit {
   final title = 'Tour of Hero';
@@ -19,8 +18,7 @@ class HeroListComponent implements OnInit {
 
   HeroListComponent(this._heroService);
 
-  Future<void> _getHeroes() async {
-    //_heroService.getAll().then((heroes) => this.heroes = heroes);
+  Future<void> _getHeroes() async {   
     heroes = await _heroService.getAll();
   }
 
